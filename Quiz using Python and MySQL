@@ -1,0 +1,321 @@
+#  PROJECT: QUIZ WITH MYSQL
+
+
+def kbc():
+  import mysql.connector
+  import random
+  import time
+  time.sleep(1)
+  mydb = mysql.connector.connect(
+    host="localhost",
+    user="main",
+    password="bfm1234@A",
+    database="kbcdb9"
+  )
+  def restart_game():
+    ask_to_play = input("Do you want to play again? (Y/N): ")
+    if ask_to_play == "Y":
+      time.sleep(1)
+      print("Game is restarting...")
+      kbc()
+    elif ask_to_play != "Y" and ask_to_play != "N":
+      time.sleep(1)
+      print("Wrong input given...")
+      time.sleep(1)
+      restart_game()
+    elif ask_to_play == "N":
+      time.sleep(1)
+      print("Thank you for playing. You can keep",money, "with you!")
+      time.sleep(1)
+      quit()
+    
+
+  mycursor = mydb.cursor()
+  #Stage1
+  print("STAGE 1 Starting...3")
+  time.sleep(1)
+print("STAGE 1 Starting...2")
+  time.sleep(1)
+  print("STAGE 1 Starting...1")
+  time.sleep(1)
+  print("\n DETAILS: Correct answer will give you Rs. 25,000 and wrong answer will restart the game.")
+  time.sleep(5)
+  print("\t    STAGE 1!   ")
+  time.sleep(3)
+  stage1_list = list()
+  mycursor.execute("SELECT questions FROM stage1")
+  myresult = mycursor.fetchall()
+  for x in myresult:
+    stage1_list.append(x)
+  money = 0
+  _quit = False
+  #STAGE1
+  for i in range(2):
+      ques1_s1 = random.choice(stage1_list)
+      print(ques1_s1)
+      if ques1_s1 == stage1_list[0]:
+          options1_s1 = "(a)UPDATE (b)TRUNCATE (c)ALTER (d)none of these"
+          correct_answer_0 = "(a)UPDATE"
+          print(options1_s1)
+          answer_s1 = input("Enter answer option: ")
+          if answer_s1 == "a":
+            time.sleep(1)
+            print("\n Nice! You have earned Rs. 25,000!")
+            money += 25000
+          else:
+            time.sleep(1)    
+            print("Your answer is incorrect.")
+            time.sleep(1)
+            print("You earned in total: ", money)
+            time.sleep(1)
+            restart_game()
+      elif ques1_s1 == stage1_list[1]:
+          options2_s2 = "(a)Primary Key (b)Foreign Key (c)unique (d)distinct"
+          correct_answer_1 = "(d)Distinct"
+          print(options2_s2)
+          answer_s1 = input("Enter answer option: ")
+          if answer_s1 == "d":
+            time.sleep(1)
+            print("\n Nice! You have earned Rs. 25,000!")
+            money += 25000
+          else:
+            time.sleep(1)
+            print("Your answer is incorrect.")
+            time.sleep(1)
+            print("You earned in total: ", money)
+            time.sleep(1)
+            ask_to_play = input("Do you want to play again? (Y/N): ")
+            if ask_to_play == "Y":
+              time.sleep(1)
+              print("Game is restarting...")
+              kbc()
+            elif ask_to_play == "N":
+              time.sleep(1)
+              print("Thank you for playing. You can keep",money, "with you!")
+              time.sleep(1)
+              quit()
+      elif ques1_s1 == stage1_list[2]:
+          options3_s3 = "(a)Create table command (b)Drop table command (c)Alter table command (d)all of these"
+          correct_answer_2 = "(b) Drop table command"
+          print(options3_s3)
+          answer_s1 = input("Enter answer option: ")
+          if answer_s1 == "b":
+            time.sleep(1)              
+            print("\n Nice! You have earned Rs. 25,000!")
+            money += 25000
+          else:
+            time.sleep(1)              
+            print("Your answer is incorrect.")
+            time.sleep(1)
+            print("You earned in total: ", money)
+            time.sleep(1)
+            ask_to_play = input("Do you want to play again? (Y/N): ")
+            if ask_to_play == "Y":
+              time.sleep(1)
+              print("Game is restarting...")
+              kbc()
+            elif ask_to_play == "N":
+              time.sleep(1)
+              print("Thank you for playing. You can keep",money, "with you!")
+              time.sleep(1)
+              quit()
+      elif ques1_s1 == stage1_list[3]:
+          options4_s4 = "(a)fixed,equal (b)equal,variable (c)fixed,variable (d)variable,equal"
+          correct_answer_3 = "(c)Fixed,variable"
+          print(options4_s4)
+          answer_s1 = input("Enter answer option: ")
+          if answer_s1 == "c":
+            time.sleep(1)              
+            print("\n Nice! You have earned Rs. 25,000!")
+            money += 25000
+          else:
+            time.sleep(1)              
+            print("Your answer is incorrect.")
+            time.sleep(1)
+            print("You earned in total: ", money)
+            time.sleep(1)
+            ask_to_play = input("Do you want to play again? (Y/N): ")
+            if ask_to_play == "Y":
+              time.sleep(1)
+              print("Game is restarting...")
+              kbc()
+            elif ask_to_play == "N":
+              time.sleep(1)
+              print("Thank you for playing. You can keep",money, "with you!")
+              time.sleep(1)
+              quit()
+      elif ques1_s1 == stage1_list[4]:
+          options5_s5 = "(a)Start (b)End (c)Join (d)all of these"
+          correct_answer_4 = "(c)Join"
+          print(options5_s5)
+          answer_s1 = input("Enter answer option: ")
+          if answer_s1 == "c":
+            time.sleep(1)              
+            print("\n Nice! You have earned Rs. 25,000!")
+            money += 25000
+          else:
+            print("Your answer is incorrect.")
+            time.sleep(1)
+            print("You earned in total: ", money)
+            time.sleep(1)
+            ask_to_play = input("Do you want to play again? (Y/N): ")
+            if ask_to_play == "Y":
+              time.sleep(1)
+              print("Game is restarting...")
+              kbc()
+            elif ask_to_play == "N":
+              time.sleep(1)
+              print("Thank you for playing. You can keep",money, "with you!")
+              time.sleep(1)
+              quit()
+  #STAGE2
+  
+  print("STAGE 2 Starting...3")
+  time.sleep(1)
+  print("STAGE 2 Starting...2")
+  time.sleep(1)
+  print("STAGE 2 Starting...1")
+  time.sleep(1)
+  print("\n DETAILS: Correct answer will give you Rs. 50,000 and wrong answer will restart the game.")
+  time.sleep(5)
+  print("\t    STAGE 2!   ")
+  time.sleep(3)
+  
+  stage2_list = list()
+  mycursor = mydb.cursor()
+  mycursor.execute("SELECT questions2 FROM stage2")
+  myresult = mycursor.fetchall()
+  for t in myresult:
+    stage2_list.append(t)
+  #STAGE2
+  for l in range(2):
+      ques1_s2 = random.choice(stage2_list)
+      print(ques1_s2)
+      if ques1_s2 == stage2_list[0]:
+        options1_s1a = "(a)BETWEEN  (b)LIKE (c)EXISTS (d)None of these"
+        print(options1_s1a)
+        answer_s2 = input("Enter answer option: ")
+        if answer_s2 == "b":
+          time.sleep(1)              
+          print("\n Nice! You have earned Rs. 50,000!")
+          money += 50000
+        else:
+          time.sleep(1)              
+          print("Your answer is incorrect.")
+          time.sleep(1)
+          print("You earned in total: ", money)
+          time.sleep(1)
+          ask_to_play = input("Do you want to play again? (Y/N): ")
+          if ask_to_play == "Y":
+            time.sleep(1)
+            print("Game is restarting...")
+            kbc()
+          elif ask_to_play == "N":
+            time.sleep(1)
+            print("Thank you for playing. You can keep",money, "with you!")
+            time.sleep(1)
+            quit()
+      elif ques1_s2 == stage2_list[1]:
+        options2_s2a = "(a)Descending (b)Any (c)Same (d)Ascending"
+        print(options2_s2a)              
+        answer_s2 = input("Enter answer option: ")
+        if answer_s2 == "d":
+          time.sleep(1)              
+          print("\n Nice! You have earned Rs. 50,000!")
+          money += 50000
+        else:
+          time.sleep(1)              
+          print("Your answer is incorrect.")
+          time.sleep(1)
+          print("You earned in total: ", money)
+          time.sleep(1)
+          ask_to_play = input("Do you want to play again? (Y/N): ")
+          if ask_to_play == "Y":
+            time.sleep(1)
+            print("Game is restarting...")
+            kbc()
+          elif ask_to_play == "N":
+            time.sleep(1)
+            print("Thank you for playing. You can keep",money, "with you!")
+            time.sleep(1)
+            quit()
+      elif ques1_s2 == stage2_list[2]:
+        options3_s3a = "(a)LEFT (b)AVG (c)JOIN (d)LEN"
+        print(options3_s3a)              
+        answer_s2 = input("Enter answer option: ")
+        if answer_s2 == "b":
+          time.sleep(1)              
+          print("\n Nice! You have earned Rs. 50,000!")
+          money += 50000
+        else:
+          time.sleep(1)              
+          print("Your answer is incorrect.")
+          time.sleep(1)
+          print("You earned in total: ", money)
+          time.sleep(1)
+          ask_to_play = input("Do you want to play again? (Y/N): ")
+          if ask_to_play == "Y":
+            time.sleep(1)
+            print("Game is restarting...")
+            kbc()
+          elif ask_to_play == "N":
+            time.sleep(1)
+            print("Thank you for playing. You can keep",money, "with you!")
+            time.sleep(1)
+            quit()
+      elif ques1_s2 == stage2_list[3]:
+        options4_s4a = "(a)Count(attribute) (b)Count(*) (c)Avg (d)Sum"
+        print(options4_s4a)              
+        answer_s2 = input("Enter answer option: ")
+        if answer_s2 == "b":
+          time.sleep(1)              
+          print("\n Nice! You have earned Rs. 50,000!")
+          money += 50000
+        else:
+time.sleep(1)              
+          print("Your answer is incorrect.")
+          time.sleep(1)
+          print("You earned in total: ", money)
+          time.sleep(1)
+          ask_to_play = input("Do you want to play again? (Y/N): ")
+          if ask_to_play == "Y":
+            time.sleep(1)
+            print("Game is restarting...")
+            kbc()
+          elif ask_to_play == "N":
+            time.sleep(1)
+            print("Thank you for playing. You can keep",money, "with you!")
+            time.sleep(1)
+            quit()
+      elif ques1_s2 == stage2_list[4]:
+        options5_s5a = "(a)True (b)False (c)Only in views (d)With Order By"
+        print(options5_s5a)              
+        answer_s2 = input("Enter answer option: ")
+        if answer_s2 == "b":
+          time.sleep(1)              
+          print("\n Nice! You have earned Rs. 50,000!")
+          money += 50000
+        else:
+          time.sleep(1)              
+          print("Your answer is incorrect.")
+          time.sleep(1)
+          print("You earned in total: ", money)
+          time.sleep(1)
+          ask_to_play = input("Do you want to play again? (Y/N): ")
+          if ask_to_play == "Y":
+            time.sleep(1)
+            print("Game is restarting...")
+            kbc()
+          elif ask_to_play == "N":
+            time.sleep(1)
+            print("Thank you for playing. You can keep",money, "with you!")
+            time.sleep(1)
+            quit()
+  time.sleep(1)
+  print("\n Thank you for playing with us! We hope you liked the game! You can keep",money,"rupees with you!")
+  time.sleep(1)
+  quit()
+kbc()
+
+
+
